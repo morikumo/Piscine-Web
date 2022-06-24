@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+      <head>
+        <title>Ballooooooon</title>
+        <style> 
+            .cercle{ 
+                height: 200px; 
+                width: 200px; 
+                border: 5px solid rgba(0, 0, 0, 1);
+                border-radius: 50%; 
+            }
+            .red{
+                background-color: red;
+            }
+            .green{
+                background-color: green;
+            }
+            .blue{
+                background-color: blue;
+            }
+         </style> 
+        <script>
+            function color(balon)
+            {
+                if (balon.classList.contains("red"))
+                {
+                    balon.classList.remove("red");
+                    balon.classList.add("green");
+                }
+                else if (balon.classList.contains("green")){
+                    balon.classList.remove("green");
+                    balon.classList.add("blue");
+                }
+                else{
+                    balon.classList.remove("blue");
+                    balon.classList.add("red");
+                }
+                return false;
+            }
+            function clik(balon)
+            {
+                color(balon);
+                if(balon.offsetWidth < "420") /* l'attribut offsetWidth est une mesure qui comprend les bordures de l'élément, ses marges internes horizontales (padding), la barre de défilement verticale si présente et affichée, et la largeur CSS de l'élément. */
+                {
+                    balon.style.width = (balon.offsetWidth + 10) + "px";
+                    balon.style.height = (balon.offsetHeight + 10) + "px";
+                }
+                else
+                {   
+                    balon.style.width = "200px";
+                    balon.style.height = "200px";
+                }
+            }
+            function pendant(balon)
+            {
+                rcolor(balon);
+                balon.style.width = Math.max(200,  balon.offsetWidth - 15) + "px";
+                balon.style.height = Math.max(200,  balon.offsetHeight - 15) + "px";
+            }
+            function rcolor(balon)
+            {
+                if (balon.classList.contains("red"))
+                {
+                    balon.classList.remove("red");
+                    balon.classList.add("blue");
+                }
+                else if (balon.classList.contains("blue")){
+                    balon.classList.remove("blue");
+                    balon.classList.add("green");
+                }
+                else{
+                    balon.classList.remove("green");
+                    balon.classList.add("red");
+                }
+                return false;
+            }
+        </script>
+    </head>
+<body>
+            <center>
+                <div class="cercle red" onclick="clik(this);" onmouseleave="pendant(this)" ></div> 
+            </center>
+        </body> 
+</html>

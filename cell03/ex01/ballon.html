@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=”UTF-8″/>
+    <title>Ballon</title>
+    <Span><center>Voici un cercle</center></Span>
+<style>
+body
+{
+    display: flex;
+    height: 100vh;
+    flex-direction: column-reverse;
+    justify-content: center;
+    background-color: bisque;
+}
+.ballon
+{
+    cursor: pointer;
+    border-radius: 50%;
+    width :200px;
+    height :200px;
+    color:black;
+    margin: 0 auto 10px;
+}
+.red
+{
+    background-color: red;
+}
+.blue
+{
+    background-color: blue;
+}
+.green
+{
+    background-color: green;
+}
+
+</style>
+<script>
+function changeColor(change)
+{
+    if(change.classList.contains("red"))
+    {   
+        change.classList.remove("red");
+        change.classList.add("blue");
+    }
+    else if(change.classList.contains("blue"))
+    {
+        change.classList.remove("blue");
+        change.classList.add("green");
+    }
+    else
+    {   
+        change.classList.remove("green");
+        change.classList.add("red");
+    }
+    return false;
+}
+function onClick (change)
+{
+    changeColor(change);
+    if(change.offsetWidth < "420") /* l'attribut offsetWidth est une mesure qui comprend les bordures de l'élément, ses marges internes horizontales (padding), la barre de défilement verticale si présente et affichée, et la largeur CSS de l'élément. */
+    {
+        change.style.width = (change.offsetWidth + 10) + "px";
+        change.style.height = (change.offsetHeight + 10) + "px";
+    }
+    else
+    {   
+        change.style.width = "200px";
+        change.style.height = "200px";
+    }
+}
+function pendant(change)
+{
+    reverse(change);
+    change.style.width = Math.max(200,  change.offsetWidth - 5) + "px";
+    change.style.height = Math.max(200,  change.offsetHeight - 5) + "px";
+}
+function reverse(change)
+{
+    if(change.classList.contains("green"))
+    {
+        change.classList.remove("green");
+        change.classList.add("blue");
+    }
+    else if(change.classList.contains("blue"))
+    {
+        change.classList.remove("blue");
+        change.classList.add("red");
+    }
+    else 
+    {
+        change.classList.remove("red");
+        change.classList.add("green");
+    }
+    return false;
+}
+console.log(change.style.width)
+</script>
+</head>
+<body>
+    <div class="ballon red" onclick="onClick(this)" onmouseleave="pendant(this)">
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+#color_box {
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+  }
+  #rgcbtn {
+    font-size: 15px;
+    font-weight: bold;
+  }

@@ -1,0 +1,53 @@
+body, html
+{
+    margin: 0; /* enleve la marge blanche qui est la par defaut */
+}
+
+div
+{
+    text-align: center;
+    color: white;
+}
+.parallax 
+{
+    /* L'image */
+    background-image: url("Electrecite-ConvertImage.jpg");
+  
+    /* la taille complete */
+    
+    /* Creer le  parallax et l'effet scroll */
+    background-color: black;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.texte
+{
+    /* Le texte est affichable au millieu et top choisi sa position */
+    position: relative;
+    top: 50%; 
+}
+
+.block
+{
+    background-color: black;
+    height: 1000px;
+}
+
+.parallax2
+{
+    /* L'image */
+    background-image: url("electrecite2-ConvertImage\ \(1\).jpg");
+  
+    /* la taille complete */
+    
+    /* Creer le  parallax et l'effet scroll */
+    background-attachment: fixed;
+    background-position: center;
+/*     background-repeat: no-repeat;
+ */    background-size: cover;
+    height: 100vh;
+}
